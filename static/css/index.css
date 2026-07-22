@@ -2,6 +2,10 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+img {
+  clip-path: inset(2px);
+}
+
 
 .footer .icon-link {
     font-size: 25px;
@@ -9,6 +13,15 @@ body {
 }
 
 .link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.link-block .dropdown {
+    display: inline-block;
+}
+
+.link-block .dropdown .button {
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -107,6 +120,131 @@ body {
     height: 100%;
 }
 
+.publication-video img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.approach-media-stack {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.figure-vspace {
+    display: block;
+    height: 1.5rem;
+}
+
+.approach-media-row {
+    margin-top: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.approach-media-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(420px, 100%);
+}
+
+.approach-media-image {
+    display: block;
+    width: min(360px, 40vw);
+    height: auto;
+    margin: 0 auto;
+    border-radius: 10px;
+    object-fit: contain;
+    clip-path: inset(2px);
+}
+
+.approach-media-image-crop-3px {
+    clip-path: inset(2px);
+}
+
+.approach-media-image-square {
+    width: min(420px, 40vw);
+}
+
+.approach-media-image-wide {
+    width: min(100%, 960px);
+    max-width: 100%;
+    height: auto;
+}
+
+.approach-media-image-abstract-width {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.approach-media-image-under-spacer {
+    margin-bottom: 1.5rem;
+}
+
+.interactive-heatmap-viewer {
+    width: 100%;
+    height: min(70vw, 540px);
+    min-height: 420px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #111827;
+    position: relative;
+}
+
+.interactive-heatmap-viewer canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.section-spacer-under-carousel {
+    height: 2rem;
+}
+
+.abstract-section {
+    padding-top: 1.25rem;
+}
+
+.section-top-spacer {
+    margin-top: 2.5rem;
+}
+
+.construction-video {
+    width: 100%;
+    max-width: 100%;
+}
+
+.heatmap-loading-note {
+    color: #e5e7eb;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.figure-caption {
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.figure-caption-spacer {
+    margin-bottom: 2.5rem;
+}
+
+
 .publication-body img {
 }
 
@@ -125,6 +263,13 @@ body {
 
 .results-carousel video {
   margin: 0;
+}
+
+.results-carousel img {
+  width: 100%;
+  height: auto;
+  display: block;
+  clip-path: inset(2px);
 }
 
 
