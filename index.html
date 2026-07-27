@@ -176,11 +176,11 @@
             Robotic and embodied sensing systems can generate large volumes of image and video data that are difficult to interpret as a coherent representation of an environment. 
           </p>
           <p>
-            We present ARCADIA, a general pipeline that combines visual observations with natural-language tasks or queries to construct persistent, grounded semantic representations. 
-            ARCADIA transforms long-horizon visual data into semantic observations, object masks, spatial relevance heatmaps, graph-based memory, and query-driven inspection artifacts.
+            We present <span class="arcadia-wordmark">Arcadia</span>, a general pipeline that combines visual observations with natural-language tasks or queries to construct persistent, grounded semantic representations.
+            <span class="arcadia-wordmark">Arcadia</span> transforms long-horizon visual data into semantic observations, object masks, spatial relevance heatmaps, graph-based memory, and query-driven inspection artifacts.
           </p>
           <p>
-            By organizing observations across time, viewpoints, and platforms into a shared semantic memory, ARCADIA supports global scene understanding beyond individual frames and enables efficient inspection, retrieval, and downstream decision-making.
+            By organizing observations across time, viewpoints, and platforms into a shared semantic memory, <span class="arcadia-wordmark">Arcadia</span> supports global scene understanding beyond individual frames and enables efficient inspection, retrieval, and downstream decision-making.
           </p>
         </div>
       </div>
@@ -198,6 +198,12 @@
         <h2 class="title is-3">Approach</h2>
         <div class="content has-text-justified">
           <p>
+            <span class="arcadia-wordmark">Arcadia</span> transforms RGB imagery into persistent, task-aware spatial
+            intelligence. A vision-language model identifies and prioritizes relevant
+            observations, and video segmentation grounds them in the scene. The resulting
+            output updates a 2D priority map that is overlaid on the reconstructed 3D
+            environment, while a knowledge graph captures detected objects and their
+            relationships. RGB imagery and GPS data are fused to build the 3D reconstruction.
           </p>
         </div>
     <div class="approach-media-stack">
@@ -206,43 +212,46 @@
         </div>
       </div>
     </div>
-    <div class="section-spacer-under-carousel"></div>
-    <h3 class="title is-4">Live Processing</h3>
-    <div class="content has-text-right">
-      <video id="live-processing-video"
-             controls
-             autoplay
-             muted
-             loop
-             playsinline
-             width="95%">
-        <source src="./static/videos/video.mp4" type="video/mp4">
-        Your browser does not support HTML5 video playback.
-      </video>
-      <p class="figure-caption is-size-5">Task: "Find cars"</p>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
-
 <section class="section">
-  <div class="container is-max-desktop">
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">Task Specificity Across Platforms</h2>
-        <div class="content has-text-justified">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered feature-comparison">
+      <div class="column">
+        <div class="content feature-comparison-panel">
+          <h2 class="title is-4">Real-Time Processing</h2>
           <p>
+            <span class="arcadia-wordmark">Arcadia</span> processes incoming RGB video data and grounds a task such as
+            <b>“Find cars”</b> in the observed scene.
           </p>
+          <div class="feature-comparison-media">
+            <video id="live-processing-video"
+                   controls
+                   autoplay
+                   muted
+                   loop
+                   playsinline>
+              <source src="./static/videos/video.mp4" type="video/mp4">
+              Your browser does not support HTML5 video playback.
+            </video>
+          </div>
         </div>
-        <div class="approach-media-stack">
-          <img src="./static/images/task.png" alt="system diagram" class="approach-media-image approach-media-image-wide">
-          <!-- <p class="figure-caption figure-caption-spacer">Figure 1: System Diagram</p> -->
+      </div>
+
+      <div class="column">
+        <div class="content feature-comparison-panel">
+          <h2 class="title is-4">Task Specificity Across Platforms</h2>
+          <p>
+            <span class="arcadia-wordmark">Arcadia</span> can be used across different robotic sensing platforms.
+          </p>
+          <div class="feature-comparison-media">
+            <img src="./static/images/task.png"
+                 alt="Task-specific processing across robotic platforms">
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
@@ -250,88 +259,96 @@
 <section class="section">
   <div class="container is-max-widescreen">
 
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
+    <div class="columns is-centered feature-comparison">
       <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Heirarchical Scene Comprehension</h2>
+        <div class="content feature-comparison-panel">
+          <h2 class="title is-4">Hierarchical Scene Comprehension</h2>
           <p>
             Combine visual cues with contextual relationships. This layered approach identifies where cars are likely to appear by reasoning across the full scene.
           </p>
-          <img src="./static/images/heirarchy.png" alt="hierarchical scene representation" class="approach-media-image approach-media-image-wide approach-media-image-crop-3px">
+          <div class="feature-comparison-media">
+            <img src="./static/images/heirarchy.png"
+                 alt="Hierarchical scene representation">
+          </div>
         </div>
       </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">User Interface Design </h2>
-        <div class="content">
+        <div class="content feature-comparison-panel">
+          <h2 class="title is-4">Georeferencing Capabilities</h2>
           <p>
+            If provided, latitude and longitude data allow the reconstructed 3D
+            scene to be georeferenced in Google Earth.
           </p>
-          <img src="./static/images/ui.png" alt="ui" class="approach-media-image approach-media-image-wide approach-media-image-crop-3px">
+          <div class="feature-comparison-media">
+            <img src="./static/images/georeferencing-example.png"
+                 alt="Georeferenced scene displayed in Google Earth"
+                 class="georeferencing-popout">
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
 
     <!-- 3D Reconstructions. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3 section-top-spacer">3D Reconstruction</h2>
 
-        <!-- Demo. -->
-        <h3 class="title is-4">Finger-Painting Video Demo</h3>
-        <div class="content has-text-justified">
-          <p>
-            Demo of the finger painting scene showing knowledge graph updating.
-          </p>
+        <div class="columns is-centered feature-comparison">
+          <div class="column">
+            <div class="content feature-comparison-panel">
+              <h2 class="title is-4">Finger-Painting Video Demo</h2>
+              <p>
+                Demo of the finger-painting scene showing the knowledge graph
+                updating as priorities are reassigned.
+              </p>
+              <div class="feature-comparison-media">
+                <video id="fingerpaint-demo-video"
+                       controls
+                       autoplay
+                       muted
+                       loop
+                       playsinline>
+                  <source src="./static/videos/Recording%202026-07-22%20132557.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="content feature-comparison-panel">
+              <h2 class="title is-4">Scene Chat</h2>
+              <p>
+                Demo of using natural-language questions to interact with and
+                retrieve information from the reconstructed scene.
+              </p>
+              <div class="feature-comparison-media">
+                <video id="scene-chat-demo-video"
+                       controls
+                       autoplay
+                       muted
+                       loop
+                       playsinline>
+                  <source src="./static/videos/Screen%20Recording%202026-07-23%20100026.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <h3 class="title is-4 section-top-spacer">Knowledge Graph Construction</h3>
         <div class="content has-text-centered">
-          <video id="fingerpaint-demo-video"
+          <video id="process-video"
                  controls
                  autoplay
                  muted
-                 loop
                  playsinline
-                 width="100%">
-            <source src="./static/videos/Recording%202026-07-22%20132557.mp4"
+                 class="construction-video">
+            <source src="./static/videos/process_video%202_h264.mp4#t=3"
                     type="video/mp4">
           </video>
-        </div>
-        <br/>
-
-        <h3 class="title is-4">Scene Chat</h3>
-        <div class="content has-text-justified">
-          <p>
-            Demo of chatting with your scene.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="scene-chat-demo-video"
-                 controls
-                 autoplay
-                 muted
-                 loop
-                 playsinline
-                 width="100%">
-            <source src="./static/videos/Screen%20Recording%202026-07-23%20100026.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <br/>
-
-        <h3 class="title is-4">Georeferencing Example</h3>
-        <div class="content has-text-justified">
-          <p>
-            The 3D reconstruction includes latitude and longitude metadata, allowing it to be located directly in Google Earth (right).
-          </p>
-        </div>
-        <div class="content has-text-centered search-example-card">
-          <img src="./static/images/georeferencing-example.png"
-               alt="Aerial imagery and georeferenced scene selection"
-               style="width: 100%; max-width: 800px; height: auto;">
+          <figcaption class="figure-caption">Left: knowledge graph generated per frame<br>Middle: creation of unclustered global knowledge graph. Green rings reflect new nodes<br>Right: clustered knowledge graph. Magenta rings reflect creation of clustered nodes</figcaption>
         </div>
       </div>
     </div>
@@ -339,7 +356,7 @@
       <!-- 3D Reconstructions. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Knowledge Graphs</h2>
+        <h2 class="title is-4 knowledge-graph-heading">Knowledge Graph Search Examples</h2>
 
         <!-- Demo  -->
         <!-- <h3 class="title is-4">Interactive 3D Heatmap</h3>
@@ -348,10 +365,9 @@
             Static visualization of the interactive 3D heatmap output.
           </p>
         </div> -->
-        <h3 class="title is-4">Search Examples</h3>
-          <p>
-            Edges represent spatial, temporal, and semantic (VLM-inferred) relationships between nodes. Nodes with lime-green outline represent clustered nodes, where similar and redundant nodes are merged into higher-level summary nodes.
-          </p>
+        <p>
+          Edges represent spatial, temporal, and semantic (VLM-inferred) relationships between nodes. Nodes with lime-green outline represent clustered nodes, where similar and redundant nodes are merged into higher-level summary nodes.
+        </p>
         <section>
           <div class="hero-body">
             <div class="container is-max-widescreen">
@@ -389,18 +405,13 @@
           </div>
         </section>
         <div class="section-spacer-under-carousel"></div>
-        <h3 class="title is-4">Graph Construction</h3>
-        <div class="content has-text-centered search-example-card">
-          <video id="process-video"
-                 controls
-                 autoplay
-                 muted
-                 playsinline
-                 class="construction-video">
-            <source src="./static/videos/process_video%202_h264.mp4#t=3"
-                    type="video/mp4">
-          </video>
-          <figcaption class="figure-caption">Left: knowledge graph generated per frame<br>Middle: creation of unclustered global knowledge graph. Green rings reflect new nodes<br>Right: clustered knowledge graph. Magenta rings reflect creation of clustered nodes</figcaption>
+        <h3 class="title is-4">User Interface Architecture </h3>
+        <div class="content has-text-justified">
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/ui.png"
+               alt="ARCADIA user interface"
+               style="width: 100%; max-width: 800px; height: auto;">
         </div>
         <br/>
         <!--/ Re-rendering. -->
@@ -456,29 +467,22 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This website adapted from the Nerfies templates, which is licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              Creative Commons Attribution-ShareAlike 4.0 International License
+            </a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            This means you are free to borrow the
+            <a href="https://github.com/concept-fusion/concept-fusion.github.io">source code</a>
+            of this website, we just ask that you link back to the
+            <a href="https://github.com/nerfies/nerfies.github.io">Nerfies source code</a>
+            in the footer. Please remember to remove the analytics code included in the
+            header of the website which you do not want on your website.
           </p>
         </div>
       </div>

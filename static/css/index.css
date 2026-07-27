@@ -30,6 +30,11 @@ img {
   font-variant: small-caps;
 }
 
+.arcadia-wordmark {
+  font-family: 'Google Sans', sans-serif;
+  font-variant: small-caps;
+}
+
 
 .teaser .hero-body {
   padding-top: 0;
@@ -218,6 +223,95 @@ img {
 
 .section-top-spacer {
     margin-top: 2.5rem;
+}
+
+.knowledge-graph-heading {
+    margin-top: 1.25rem;
+}
+
+.feature-comparison {
+    align-items: stretch;
+}
+
+.feature-comparison > .column {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-comparison > .column:hover {
+    z-index: 20;
+}
+
+.feature-comparison-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.feature-comparison-panel > p:first-of-type {
+    min-height: 4.5rem;
+}
+
+.feature-comparison-media {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+.feature-comparison-media video,
+.feature-comparison-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    clip-path: none;
+}
+
+.feature-comparison-media img,
+.approach-media-image {
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+    .feature-comparison-media img:hover,
+    .approach-media-image:hover {
+        z-index: 10;
+        transform: scale(1.2);
+        box-shadow: 0 18px 40px rgba(17, 24, 39, 0.25);
+    }
+}
+
+.georeferencing-popout {
+    transform-origin: right center;
+}
+
+@media (hover: hover) and (min-width: 769px) {
+    .feature-comparison-media .georeferencing-popout:hover {
+        transform: scale(1.2);
+        box-shadow: 0 24px 55px rgba(17, 24, 39, 0.32);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feature-comparison-media img,
+    .approach-media-image {
+        transition: none;
+    }
+
+    .feature-comparison-media img:hover,
+    .approach-media-image:hover {
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .feature-comparison-panel > p:first-of-type {
+        min-height: 0;
+    }
 }
 
 .construction-video {
